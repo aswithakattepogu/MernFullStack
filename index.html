@@ -2,157 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Doctor Appointment Form</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-        }
-
-        .container {
-            display: flex;
-            flex-wrap: wrap;
-            align-items: center;
-            justify-content: center;
-            padding: 40px;
-        }
-
-        .form-container {
-            width: 50%;
-            padding: 20px;
-        }
-
-        h2 {
-            border-bottom: 2px solid #9f0052;
-            padding-bottom: 10px;
-            color: #333;
-        }
-
-        form {
-            font-size: 16px;
-        }
-
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-
-        input[type="text"],
-        input[type="tel"],
-        input[type="date"],
-        input[type="time"],
-        textarea {
-            width: 100%;
-            padding: 6px;
-            margin-top: 4px;
-            margin-bottom: 10px;
-            border: 1px solid #aaa;
-            border-radius: 4px;
-        }
-
-        input[type="radio"],
-        input[type="checkbox"] {
-            margin-right: 6px;
-        }
-
-        .form-group-inline {
-            display: flex;
-            gap: 10px;
-        }
-
-        .form-group-inline input {
-            flex: 1;
-        }
-
-        textarea {
-            height: 80px;
-        }
-
-        .submit-btn {
-            margin-top: 15px;
-        }
-
-        input[type="submit"] {
-            padding: 8px 16px;
-            background-color: #9f0052;
-            color: white;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-
-        .image-container {
-            width: 40%;
-            text-align: center;
-        }
-
-        .image-container img {
-            max-width: 100%;
-            height: auto;
-            border-radius: 10px;
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                flex-direction: column;
-            }
-
-            .form-container, .image-container {
-                width: 90%;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-<div class="container">
-    <div class="image-container">
-        <img src="https://thumbs.dreamstime.com/b/portrait-colombian-female-doctor-medical-coat-holding-clipboard-medical-records-female-doctor-medical-coat-holding-192545684.jpg" alt="Doctor">
+    <div class="stopwatch-container">
+        <h1>⏱️ Stopwatch</h1>
+        <div class="timer-display">00:00:00</div>
+        <div class="controls">
+            <button id="startPauseBtn">Start</button>
+            <button id="resetBtn">Reset</button>
+            <button id="lapBtn">Lap</button>
+        </div>
+        <ul class="laps"></ul>
     </div>
-    <div class="form-container">
-        <h2>Doctor Appointment Form</h2>
-        <form>
-            <label>Appointment Date:</label>
-            <input type="date" name="date">
 
-            <label>Appointment Time:</label>
-            <input type="time" name="time">
-
-            <label>Name:</label>
-            <div class="form-group-inline">
-                <input type="text" name="first-name" placeholder="First">
-                <input type="text" name="last-name" placeholder="Last">
-            </div>
-
-            <label>Gender:</label>
-            <input type="radio" name="gender" value="male">Male
-            <input type="radio" name="gender" value="female">Female
-
-            <label>Phone:</label>
-            <input type="tel" name="phone">
-
-            <label>Address:</label>
-            <div class="form-group-inline">
-                <input type="text" name="city" placeholder="City">
-                <input type="text" name="state" placeholder="State">
-            </div>
-
-            <label>Your Query:</label>
-            <textarea name="query"></textarea>
-
-            <label>Appointment Type:</label>
-            <input type="checkbox" name="type" value="cervix">Cervix Checkup<br>
-            <input type="checkbox" name="type" value="heart">Heart Checkup<br>
-            <input type="checkbox" name="type" value="eye">Eye Check-up<br>
-            <input type="checkbox" name="type" value="hearing">Hearing Test<br>
-
-            <div class="submit-btn">
-                <input type="submit" value="Send">
-            </div>
-        </form>
-    </div>
-</div>
-
+    <script src="script.js"></script>
 </body>
 </html>
