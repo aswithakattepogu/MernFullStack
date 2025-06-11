@@ -1,125 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Prime Number Generator</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background: #f2f2f2;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
-
-    .container {
-      background: white;
-      padding: 30px 40px;
-      border-radius: 10px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-      width: 500px;
-    }
-
-    h2 {
-      text-align: center;
-      margin-bottom: 20px;
-    }
-
-    table {
-      width: 100%;
-    }
-
-    td {
-      padding: 10px;
-      vertical-align: top;
-    }
-
-    input[type="text"], textarea {
-      width: 100%;
-      padding: 8px;
-      border: 1px solid #ccc;
-      border-radius: 5px;
-    }
-
-    textarea {
-      resize: vertical;
-      height: 100px;
-    }
-
-    button {
-      padding: 10px 20px;
-      background: #ccc;
-      border: none;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    button:hover {
-      background: #999;
-    }
-
-    .center {
-      text-align: center;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Stopwatch App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="stopwatch-container">
+        <h1>⏱️ Stopwatch</h1>
+        <div class="timer-display">00:00:00</div>
+        <div class="controls">
+            <button id="startPauseBtn">Start</button>
+            <button id="resetBtn">Reset</button>
+            <button id="lapBtn">Lap</button>
+        </div>
+        <ul class="laps"></ul>
+    </div>
 
-<div class="container">
-  <h2>Prime Number Generator</h2>
-  <table>
-    <tr>
-      <td>Start</td>
-      <td><input type="text" id="start" /></td>
-    </tr>
-    <tr>
-      <td>End</td>
-      <td><input type="text" id="end" /></td>
-    </tr>
-    <tr>
-      <td>Prime Number</td>
-      <td><textarea id="result" readonly></textarea></td>
-    </tr>
-    <tr>
-      <td colspan="2" class="center">
-        <button onclick="generatePrimes()">Generate</button>
-      </td>
-    </tr>
-  </table>
-</div>
-
-<script>
-  function isPrime(num) {
-    if (num < 2) return false;
-    for (let i = 2; i <= Math.sqrt(num); i++) {
-      if (num % i === 0) return false;
-    }
-    return true;
-  }
-
-  function generatePrimes() {
-    const start = parseInt(document.getElementById("start").value);
-    const end = parseInt(document.getElementById("end").value);
-    const resultBox = document.getElementById("result");
-    resultBox.value = "";
-
-    if (isNaN(start) || isNaN(end) || start > end) {
-      resultBox.value = "Please enter valid numbers with Start less than or equal to End.";
-      return;
-    }
-
-    let primes = [];
-    for (let i = start; i <= end; i++) {
-      if (isPrime(i)) {
-        primes.push(i);
-      }
-    }
-
-    resultBox.value = primes.length > 0 ? primes.join(", ") : "No prime numbers in this range.";
-  }
-</script>
-
+    <script src="script.js"></script>
 </body>
 </html>
